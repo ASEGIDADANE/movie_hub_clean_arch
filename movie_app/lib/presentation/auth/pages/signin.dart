@@ -66,20 +66,22 @@ class SigninPage extends StatelessWidget {
     return ReactiveButton(
       title: 'Sign In',
       activeColor: AppColors.primary,
-      onPressed: () async {
-        await locator<signinusecase>().call(
-          SigninReqParams(
-            email: emailController.text,
-            password: passwordController.text,
+      onPressed:
+          () async => locator<signinusecase>().call(
+            SigninReqParams(
+              email: emailController.text,
+              password: passwordController.text,
+            ),
           ),
-        );
-      },
 
       onSuccess: () {
         AppNavigator.pushReplacement(context, const HomePage());
       },
       onFailure: (error) {
+        print('this is check up');
+        print(error);
         DisplayMessage.errorMessage(error, context);
+        print("what is error");
       },
     );
   }

@@ -9,8 +9,11 @@ import 'package:movie_app/service_locator.dart';
 class signinusecase extends UseCase <Either, SigninReqParams>{
   
   @override
-  Future<Either> call(SigninReqParams? params, ) async {
+  Future<Either> call(SigninReqParams? params ) async {
     return await locator<AuthRepository>().signin(params!);
   }
   
 }
+
+
+

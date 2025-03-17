@@ -66,14 +66,13 @@ class SignupPage extends StatelessWidget {
     return ReactiveButton(
       title: 'Sign up',
       activeColor: AppColors.primary,
-      onPressed: () async {
-        await locator<signupusecase>().call(
-          SignupReqParams(
-            email: emailController.text,
-            password: passwordController.text,
+      onPressed:
+          () async => locator<signupusecase>().call(
+            SignupReqParams(
+              email: emailController.text,
+              password: passwordController.text,
+            ),
           ),
-        );
-      },
 
       onSuccess: () {
         AppNavigator.pushReplacement(context, const HomePage());

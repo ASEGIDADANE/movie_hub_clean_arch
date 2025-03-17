@@ -19,16 +19,19 @@ class AuthApiServiceImpl extends AuthApiService {
   @override
   Future<Either> signUp(SignupReqParams params) async {
     try{
+      print("params");
+      print(params.toMap());
       var response = await locator<DioClient>().post(
         AppUrls.signUp,
         data: params.toMap()
         );
+      print(response.data);
       return right(response.data);
       
      
 
     } on DioException catch(e){
-      return left(e.response!.data['message']);
+      return left(e.response!.data['message'] ?? 'Unknown Error');
     }
   }
   
@@ -44,7 +47,7 @@ class AuthApiServiceImpl extends AuthApiService {
      
 
     } on DioException catch(e){
-      return left(e.response!.data['message']);
+      return left(e.response!.data['message'] ?? 'unknown error');
     }
   }
 }
