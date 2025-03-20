@@ -5,6 +5,9 @@ class AppUrls {
   static const String trendingMovies = 'api/v3/movies/trending';
   static const String playingMovies = 'api/v3/movies/nowplaying';
   static const String popularTv = 'api/v3/tv/popular';
+  static const String movieTrailer = 'api/v3/movies/trailer';
+
+  static const trailerBase = 'https://www.youtube.com/watch?v=';
 }
 
 
