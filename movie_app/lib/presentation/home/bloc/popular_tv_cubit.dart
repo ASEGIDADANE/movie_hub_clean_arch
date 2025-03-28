@@ -10,7 +10,7 @@ class PopularTvCubit extends Cubit<PopularTvState> {
 
   void getPopularTvMovies() async {
     var returnedData = await locator<GetPopularTvUseCase>().call(null);
-    print(returnedData);
+    
     return returnedData.fold(
       (error) {
         emit(failureState(message: error));

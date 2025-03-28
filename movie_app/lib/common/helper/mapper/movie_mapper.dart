@@ -6,6 +6,7 @@ import 'package:movie_app/domain/movie/entities/movie_entities.dart';
 class MovieMapper {
 
   static MovieEntity toEntity(MovieModel movie) {
+   
     return MovieEntity(
       backdropPath: movie.backdropPath, 
       id: movie.id, 

@@ -8,7 +8,7 @@ class TrendingCubit extends Cubit<TrendingState> {
 
   void getTrendingMovies() async {
     var returnedData = await locator<getTrendingUsecase>().call(null);
-    print(returnedData);
+  
     return returnedData.fold(
       (error) {
         emit(failureState(message: error));

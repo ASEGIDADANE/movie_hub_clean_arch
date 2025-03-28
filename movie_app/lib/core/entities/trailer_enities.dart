@@ -23,4 +23,10 @@ class TrailerEntity {
   final DateTime ? publishedAt;
   final String ? id;
 
+
+   @override
+  String toString() {
+    return 'TrailerEntity(iso6391: $iso6391, iso31661: $iso31661, name: $name, key: $key, site: $site, size: $size, type: $type, official: $official, publishedAt: $publishedAt, id: $id)';
+  }
+
 }

@@ -32,12 +32,17 @@ class MovieServiceImpl extends MovieService {
   }
 
   @override
-  Future<Either> getMovieTrailer(int movieId) async {
+  Future<Either> getMovieTrailer( int movieId) async {
     try {
       var response = await locator<DioClient>().get('${AppUrls.movieTrailer}/$movieId');
+      
       return right(response.data);
+
     } on DioException catch (e) {
+      
       return left(e.response!.data['message']);
+
+
     }
   }
 }

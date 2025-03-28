@@ -1,4 +1,5 @@
 class MovieModel {
+  
   MovieModel({
     required this.backdropPath,
     required this.id,
@@ -52,5 +53,13 @@ class MovieModel {
       voteCount: json["vote_count"],
     );
   }
+
+
+
+  @override
+  String toString() {
+    return 'MovieModel(backdropPath: $backdropPath, id: $id, title: $title, originalTitle: $originalTitle, overview: $overview, posterPath: $posterPath, mediaType: $mediaType, adult: $adult, originalLanguage: $originalLanguage, genreIds: $genreIds, popularity: $popularity, releaseDate: $releaseDate, video: $video, voteAverage: $voteAverage, voteCount: $voteCount)';
+  }
+  
 
 }

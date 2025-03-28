@@ -17,16 +17,20 @@ class VideoPlayer extends StatelessWidget {
       child: BlocBuilder<TrailerCubit, TrailerState>(
         builder: (context, state) {
           if (state is TrailerLoadingState) {
-            print("it is loading video");
+            
             return const Center(child: CircularProgressIndicator());
           }
-          print("it is not loading video");
+         
           if (state is TrailerLoadedState) {
-            print("it is start playing video");
+
+            
         
             return YoutubePlayer(
+              
               controller: state.youtubePlayerController,
               showVideoProgressIndicator: true,
+
+              
             );
           }
           if (state is FailureState ) {

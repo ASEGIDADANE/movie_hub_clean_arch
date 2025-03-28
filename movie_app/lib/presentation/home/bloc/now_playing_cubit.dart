@@ -10,7 +10,7 @@ class NowPlayingCubit extends Cubit<NowPlayingState> {
 
   void getNowPlayingMovies() async {
     var returnedData = await locator<GetPlayingTrendingUsecase>().call(null);
-    print(returnedData);
+    
     return returnedData.fold(
       (error) {
         emit(failureState(message: error));

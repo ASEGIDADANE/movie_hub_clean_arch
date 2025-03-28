@@ -1,5 +1,3 @@
-
-
 class MovieEntity {
   MovieEntity({
     required this.backdropPath,
@@ -19,24 +17,29 @@ class MovieEntity {
     required this.voteCount,
   });
 
-  final String ? backdropPath;
-  final int ? id;
-  final String ? title;
-  final String ? originalTitle;
-  final String ? overview;
-  final String ? posterPath;
-  final String ? mediaType;
-  final bool ? adult;
-  final String ? originalLanguage;
-  final List < int > genreIds;
-  final double ? popularity;
-  final DateTime ? releaseDate;
-  final bool ? video;
-  final double ? voteAverage;
-  final int ? voteCount;
+  final String? backdropPath;
+  final int? id;
+  final String? title;
+  final String? originalTitle;
+  final String? overview;
+  final String? posterPath;
+  final String? mediaType;
+  final bool? adult;
+  final String? originalLanguage;
+  final List<int> genreIds;
+  final double? popularity;
+  final DateTime? releaseDate;
+  final bool? video;
+  final double? voteAverage;
+  final int? voteCount;
 
   // String providePosterPath() {
-  //   return  posterPath != null ? AppImages.movieImageBasePath + posterPath! :  
+  //   return  posterPath != null ? AppImages.movieImageBasePath + posterPath! :
   //   AppImages.defaultImage;
   // }
+
+  @override
+  String toString() {
+    return 'MovieEntity(backdropPath: $backdropPath, id: $id, title: $title, originalTitle: $originalTitle, overview: $overview, posterPath: $posterPath, mediaType: $mediaType, adult: $adult, originalLanguage: $originalLanguage, genreIds: $genreIds, popularity: $popularity, releaseDate: $releaseDate, video: $video, voteAverage: $voteAverage, voteCount: $voteCount)';
+  }
 }

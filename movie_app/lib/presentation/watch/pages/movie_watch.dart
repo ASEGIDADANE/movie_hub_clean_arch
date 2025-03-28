@@ -6,6 +6,7 @@ import 'package:movie_app/presentation/watch/widgets/video_player.dart';
 
 class MovieWatchPage extends StatelessWidget {
   final MovieEntity movieEntity;
+ 
   const MovieWatchPage({required this.movieEntity,super.key});
 
   @override
@@ -20,8 +21,8 @@ class MovieWatchPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             VideoPlayer(id: movieEntity.id!),
-          //   const SizedBox(height: 16,),
-          //   VideoTitle(title: movieEntity.title!,),
+            const SizedBox(height: 16,),
+            // VideoTitle(title: movieEntity.title!,),
           //   const SizedBox(height: 16,),
           //   Row(
           //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
