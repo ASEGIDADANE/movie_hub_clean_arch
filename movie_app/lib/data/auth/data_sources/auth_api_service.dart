@@ -11,9 +11,10 @@ import 'package:movie_app/service_locator.dart';
 
 abstract class AuthApiService {
   Future<Either> signUp(SignupReqParams params);
-    Future<Either> signin(SigninReqParams params);
+  Future<Either> signin(SigninReqParams params);
   
 }
+
 
 class AuthApiServiceImpl extends AuthApiService {
   @override

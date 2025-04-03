@@ -11,17 +11,17 @@ class TrailerCubit extends Cubit<TrailerState> {
   void getMovieTrailer(int movieId) async {
     try {
       var returnedData = await locator<GetTrailerMovieUsecase>().call(movieId);
-      print(" this is returned data -----> $returnedData");
+     
 
 
       returnedData.fold(
         (error) {
-          print(" this is error -----> $error");
+        
           emit(FailureState(message: error));
         },
         (data) async {
           List<TrailerEntity>trailerEntity = data;
-          print(" this is trailer entity -----> $trailerEntity");
+      
           
            TrailerEntity trailer = trailerEntity.first;
           if (trailer.key == null) {
@@ -36,7 +36,7 @@ class TrailerCubit extends Cubit<TrailerState> {
             flags: const YoutubePlayerFlags(
               autoPlay: true),
           );
-          print(" this is controller -----> $controller");
+        
          
 
           emit(TrailerLoadedState(youtubePlayerController: controller));
@@ -46,7 +46,7 @@ class TrailerCubit extends Cubit<TrailerState> {
         },
       );
     } catch (e) {
-      print("this is error nw -----> $e");
+    
       emit(FailureState(message: e.toString()));
     }
   }

@@ -14,6 +14,8 @@ import 'package:movie_app/domain/auth/usecase/signup.dart';
 import 'package:movie_app/domain/movie/repositories/movie_repo.dart';
 import 'package:movie_app/domain/movie/usecase/get_movie_trailerUsecase.dart';
 import 'package:movie_app/domain/movie/usecase/get_playing_trending_usecase.dart';
+import 'package:movie_app/domain/movie/usecase/get_recommandation_movie_usecase.dart';
+import 'package:movie_app/domain/movie/usecase/get_similar_movies_usecase.dart';
 import 'package:movie_app/domain/movie/usecase/get_trending_usecase.dart';
 import 'package:movie_app/domain/tv/repository/tv_repository.dart';
 import 'package:movie_app/domain/tv/usecase/get_popular_tv.dart';
@@ -44,6 +46,12 @@ void setupServiceLocator() {
  locator.registerFactory<GetPlayingTrendingUsecase>(() => GetPlayingTrendingUsecase());
  locator.registerFactory<GetPopularTvUseCase>(() => GetPopularTvUseCase());
  locator.registerFactory<GetTrailerMovieUsecase>(() => GetTrailerMovieUsecase());
+ locator.registerFactory<GetRecommandationMovieUsecase>(() => GetRecommandationMovieUsecase());
+ locator.registerFactory<GetSimilarMoviesUsecase>(() => GetSimilarMoviesUsecase());
+
+
+
+
 
 
 

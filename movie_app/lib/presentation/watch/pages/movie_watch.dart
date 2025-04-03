@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/common/widget/appbar/appbar.dart';
 import 'package:movie_app/domain/movie/entities/movie_entities.dart';
+import 'package:movie_app/presentation/watch/widgets/recommandation_movies.dart';
+import 'package:movie_app/presentation/watch/widgets/similar_movies.dart';
+
+import 'package:movie_app/presentation/watch/widgets/video_overview.dart';
 import 'package:movie_app/presentation/watch/widgets/video_player.dart';
+import 'package:movie_app/presentation/watch/widgets/video_release_date.dart';
+import 'package:movie_app/presentation/watch/widgets/video_titile.dart';
+import 'package:movie_app/presentation/watch/widgets/video_vote_average.dart';
 
 
 class MovieWatchPage extends StatelessWidget {
@@ -22,21 +29,21 @@ class MovieWatchPage extends StatelessWidget {
           children: [
             VideoPlayer(id: movieEntity.id!),
             const SizedBox(height: 16,),
-            // VideoTitle(title: movieEntity.title!,),
-          //   const SizedBox(height: 16,),
-          //   Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       VideoReleaseDate(releaseDate: movieEntity.releaseDate!,),
-          //       VideoVoteAverage(voteAverage: movieEntity.voteAverage!,)
-          //     ],
-          //   ),
-          //   const SizedBox(height: 16,),
-          //   VideoOverview(overview: movieEntity.overview!,),
-          //   const SizedBox(height: 16,),
-          //   RecommendationMovies(movieId: movieEntity.id!,),
-          //   const SizedBox(height: 16,),
-          //   SimilarMovies(movieId: movieEntity.id!,)
+            VideoTitle(title: movieEntity.title!,),
+            const SizedBox(height: 16,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                VideoReleaseDate(releaseDate: movieEntity.releaseDate!,),
+                VideoVoteAverage(voteAverage: movieEntity.voteAverage!,)
+              ],
+            ),
+            const SizedBox(height: 16,),
+            VideoOverview(overview: movieEntity.overview!,),
+            const SizedBox(height: 16,),
+            RecommendationMovies(movieId: movieEntity.id!,),
+            const SizedBox(height: 16,),
+            SimilarMovies(movieId: movieEntity.id!,)
           ],
         ),
       ),

@@ -6,6 +6,8 @@ class AppUrls {
   static const String playingMovies = 'api/v3/movies/nowplaying';
   static const String popularTv = 'api/v3/tv/popular';
   static const String movieTrailer = 'api/v3/movies/trailer';
+  static const String movieRecommandtion = 'api/v3/movies/recommendations';
+  static const String movieSimilar = 'api/v3/movies/similar';
 
   static const trailerBase = 'https://www.youtube.com/watch?v=';
 }

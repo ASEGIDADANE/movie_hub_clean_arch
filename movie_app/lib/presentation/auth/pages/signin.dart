@@ -78,10 +78,9 @@ class SigninPage extends StatelessWidget {
         AppNavigator.pushReplacement(context, const HomePage());
       },
       onFailure: (error) {
-        print('this is check up');
-        print(error);
+        
         DisplayMessage.errorMessage(error, context);
-        print("what is error");
+       
       },
     );
   }
