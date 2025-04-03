@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:movie_app/common/widget/movie/movie_card.dart';
 
-import 'package:movie_app/presentation/watch/bloc/recommandation_movies_cubit.dart';
+import 'package:movie_app/common/widget/tv/tv_card.dart';
+
+
 import 'package:movie_app/presentation/watch/bloc/recommandation_state.dart';
+import 'package:movie_app/presentation/watch/bloc/recommandition_tv_cubit.dart';
 
 
 
-class RecommendationMovies extends StatelessWidget {
-  final int movieId;
-  const RecommendationMovies({required this.movieId,super.key});
+class RecommandationTvs extends StatelessWidget {
+  final int tvId;
+  const RecommandationTvs({required this.tvId,super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => RecommandationCubit()..getRecommandationMovies(movieId),
-      child: BlocBuilder<RecommandationCubit,RecommandationState>(
+      create: (context) => RecommandationTvsCubit()..getRecommandationTvs(tvId),
+      child: BlocBuilder<RecommandationTvsCubit,RecommandationState>(
         builder: (context, state) {
           if (state is RecommandationLoadingState){
             return const Center(
@@ -43,8 +45,8 @@ class RecommendationMovies extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
 
-                      return MovieCard(
-                        movieEntity: state.recommandationList[index],
+                      return TVCard(
+                        tvEntity: state.recommandationList[index],
                       );
                     },
                     separatorBuilder: (context, index) => const SizedBox(width: 10,),

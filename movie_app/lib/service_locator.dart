@@ -19,6 +19,7 @@ import 'package:movie_app/domain/movie/usecase/get_similar_movies_usecase.dart';
 import 'package:movie_app/domain/movie/usecase/get_trending_usecase.dart';
 import 'package:movie_app/domain/tv/repository/tv_repository.dart';
 import 'package:movie_app/domain/tv/usecase/get_popular_tv.dart';
+import 'package:movie_app/domain/tv/usecase/get_recommanditions_tv.dart';
 
 final locator = GetIt.instance;
 
@@ -48,6 +49,8 @@ void setupServiceLocator() {
  locator.registerFactory<GetTrailerMovieUsecase>(() => GetTrailerMovieUsecase());
  locator.registerFactory<GetRecommandationMovieUsecase>(() => GetRecommandationMovieUsecase());
  locator.registerFactory<GetSimilarMoviesUsecase>(() => GetSimilarMoviesUsecase());
+ locator.registerFactory<GetRecommanditionsTv>(() => GetRecommanditionsTv());
+
 
 
 

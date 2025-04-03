@@ -3,34 +3,34 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:movie_app/common/widget/movie/movie_card.dart';
 
-import 'package:movie_app/presentation/watch/bloc/recommandation_movies_cubit.dart';
-import 'package:movie_app/presentation/watch/bloc/recommandation_state.dart';
+
+import 'package:movie_app/presentation/watch/bloc/similar_movies_state.dart';
+import 'package:movie_app/presentation/watch/bloc/similar_tv_cubit.dart';
 
 
 
-class RecommendationMovies extends StatelessWidget {
-  final int movieId;
-  const RecommendationMovies({required this.movieId,super.key});
+class SimilarTvs extends StatelessWidget {
+  final int tvId;
+  const SimilarTvs({required this.tvId,super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => RecommandationCubit()..getRecommandationMovies(movieId),
-      child: BlocBuilder<RecommandationCubit,RecommandationState>(
+      create: (context) => SimilarTvsCubit()..getSimilarTvs(tvId),
+      child: BlocBuilder<SimilarTvsCubit,SimilarState>(
         builder: (context, state) {
-          if (state is RecommandationLoadingState){
+          if (state is SimilarLoadingState){
             return const Center(
               child: CircularProgressIndicator()
             );
           }
           
-          if (state is RecommandationLoadedState ){
-         
+          if (state is SimilarLoadedState ){
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Recommendation',
+                  'Similar',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20
@@ -42,13 +42,12 @@ class RecommendationMovies extends StatelessWidget {
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-
                       return MovieCard(
-                        movieEntity: state.recommandationList[index],
+                        movieEntity: state.SimilarList[index],
                       );
                     },
                     separatorBuilder: (context, index) => const SizedBox(width: 10,),
-                    itemCount: state.recommandationList.length
+                    itemCount: state.SimilarList.length
                   ),
                 ),
               ],
@@ -56,8 +55,6 @@ class RecommendationMovies extends StatelessWidget {
           }
 
           if (state is FaliureState) {
-
-            
             return Text(state.message);
           }
 
